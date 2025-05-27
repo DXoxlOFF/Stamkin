@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭОМ Стамкин</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="logo">ЭОМ Стамкин</div>
+        <div class="auth-buttons" id="authSection">
+            <button onclick="showPopup('login')">Войти</button>
+            <button onclick="showPopup('register')">Регистрация</button>
+        </div>
+        <div class="user-info" id="userSection" style="display: none;">
+            <span id="userName"></span>
+            <button onclick="logout()">Выйти</button>
+        </div>
+    </header>
+
+    <div class="content" id="mainContent">
+        <div class="course" data-course="math">
+            <div class="course-header">
+                <h2>Математический анализ</h2>
+                <button onclick="startLearning('math')">Учить</button>
+            </div>
+            <p>Вычисление параметорв для деталей</p>
+            <div class="teacher">Преподаватель: Твердый А.Б.</div>
+        </div>
+
+        <div class="course" data-course="prog">
+            <div class="course-header">
+                <h2>Программирование</h2>
+                <button onclick="startLearning('physics')">Учить</button>
+            </div>
+            <p>Создание бд для станков</p>
+            <div class="teacher">Преподаватель: Селеев Б.В.</div>
+        </div>
+
+        <div class="course" data-course="design">
+            <div class="course-header">
+                <h2>Дизайн</h2>
+                <button onclick="startLearning('physics')">Учить</button>
+            </div>
+            <p>Дизайн интерфейсов для станков</p>
+            <div class="teacher">Преподаватель: Веселый В.Г.</div>
+        </div>
+    </div>
+
+    <div class="lesson-content" id="lessonContent" style="display: none;">
+        <button onclick="goBack()">← Назад</button>
+        <h1 id="lessonTitle"></h1>
+        <div class="lessons-grid" id="lessonsGrid"></div>
+    </div>
+
+    <div class="popup-overlay" id="loginPopup">
+        <div class="popup">
+            <h3>Вход</h3>
+            <input type="text" id="loginUsername" placeholder="Логин">
+            <input type="password" id="loginPassword" placeholder="Пароль">
+            <button onclick="login()">Войти</button>
+            <button onclick="closePopup()">Закрыть</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="registerPopup">
+        <div class="popup">
+            <h3>Регистрация</h3>
+            <input type="text" id="registerUsername" placeholder="Логин">
+            <input type="password" id="registerPassword" placeholder="Пароль">
+            <input type="text" id="registerName" placeholder="Имя">
+            <button onclick="register()">Зарегистрироваться</button>
+            <button onclick="closePopup()">Закрыть</button>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
